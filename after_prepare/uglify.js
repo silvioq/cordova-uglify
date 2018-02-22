@@ -69,7 +69,7 @@ function run() {
  */
 function processFolders(wwwPath, platform) {
   foldersToProcess.forEach(function(folder) {
-    processFiles(path.join(wwwPath, folder, platform));
+    processFiles(path.join(wwwPath, folder), platform);
   });
 }
 
@@ -97,7 +97,7 @@ function processFiles(dir,platform) {
         }
 
         if (recursiveFolderSearch && stat.isDirectory()) {
-          processFiles(file);
+          processFiles(file, platform);
 
           return;
         }
