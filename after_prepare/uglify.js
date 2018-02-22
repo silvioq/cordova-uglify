@@ -126,7 +126,7 @@ function compress(file, platform) {
         add: true
       });
       result = UglifyJS.minify(res.src, hookConfig.uglifyJsOptions);
-      fs.writeFileSync(file, bomHepler + result.code, 'utf8'); // overwrite the original unminified file
+      fs.writeFileSync(file, bomHelper + result.code, 'utf8'); // overwrite the original unminified file
       break;
 
     case '.css':
@@ -134,7 +134,7 @@ function compress(file, platform) {
 
       source = fs.readFileSync(file, 'utf8');
       result = cssMinifier.minify(source);
-      fs.writeFileSync(file, bomHepler + result.styles, 'utf8'); // overwrite the original unminified file
+      fs.writeFileSync(file, bomHelper + result.styles, 'utf8'); // overwrite the original unminified file
       break;
 
     default:
